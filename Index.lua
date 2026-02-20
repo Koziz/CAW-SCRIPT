@@ -103,7 +103,7 @@ CreateAutoLoadTab(
 CreateAutoLoadTab(
     "Auto Farm", 
     "Memuat otomatis sistem farming resource (Kayu, Batu, dll).", 
-    "https://raw.githubusercontent.com/NamaKamu/KzoyzHub/main/Autofarm.lua"
+    "https://raw.githubusercontent.com/Koziz/CAW-SCRIPT/refs/heads/main/Autofarm.lua"
 )
 
 CreateAutoLoadTab(
