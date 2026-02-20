@@ -2,7 +2,19 @@
 local TargetPage = ...
 if not TargetPage then warn("Module harus di-load dari Kzoyz Index!") return end
 
-getgenv().ScriptVersion = "Pabrik v0.50-SweepFix" 
+-- [[ FIX SCROLL MENTOK ]] --
+TargetPage.AutomaticCanvasSize = Enum.AutomaticSize.Y
+TargetPage.CanvasSize = UDim2.new(0, 0, 0, 0)
+local listLayout = TargetPage:FindFirstChildWhichIsA("UIListLayout")
+if listLayout then
+    TargetPage.CanvasSize = UDim2.new(0, 0, 0, listLayout.AbsoluteContentSize.Y + 30)
+    listLayout:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function()
+        TargetPage.CanvasSize = UDim2.new(0, 0, 0, listLayout.AbsoluteContentSize.Y + 30)
+    end)
+end
+------------------------------
+
+getgenv().ScriptVersion = "Pabrik v0.50-SweepFix-Full" 
 
 -- ========================================== --
 -- [[ SETTING KECEPATAN ]]
@@ -27,7 +39,7 @@ LP.Idled:Connect(function() VirtualUser:CaptureController(); VirtualUser:ClickBu
 getgenv().GridSize = 4.5; getgenv().HitCount = 4    
 getgenv().EnablePabrik = false
 getgenv().PabrikStartX = 0; getgenv().PabrikEndX = 10; getgenv().PabrikYPos = 37
-getgenv().GrowthTime = 30 -- << INI WAKTU TUNGGU HARVEST (DETIK)
+getgenv().GrowthTime = 30 
 getgenv().BreakPosX = 0; getgenv().BreakPosY = 0
 getgenv().DropPosX = 0; getgenv().DropPosY = 0
 
