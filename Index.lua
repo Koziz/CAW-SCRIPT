@@ -109,7 +109,7 @@ CreateAutoLoadTab(
 CreateAutoLoadTab(
     "Manager", 
     "Memuat otomatis sistem Inventory & Sortir Barang.", 
-    "https://raw.githubusercontent.com/NamaKamu/KzoyzHub/main/Manager.lua"
+    "https://raw.githubusercontent.com/Koziz/CAW-SCRIPT/refs/heads/main/Manager.lua"
 )
 
 -- Note: Kita nggak otomatis buka tab pertama di sini, biar user milih dulu mau nge-load yang mana.
