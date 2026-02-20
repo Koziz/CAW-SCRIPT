@@ -42,7 +42,7 @@ local function CreateAutoLoadTab(TabName, DescText, LoadLink)
     local Page = Instance.new("ScrollingFrame", PageContainer); Page.Size = UDim2.new(1, 0, 1, 0); Page.BackgroundTransparency = 1; Page.Visible = false; Page.BorderSizePixel = 0; Page.ScrollBarThickness = 2; Page.ScrollBarImageColor3 = Theme.Purple
     local PageLayout = Instance.new("UIListLayout", Page); PageLayout.Padding = UDim.new(0, 6); PageLayout.SortOrder = Enum.SortOrder.LayoutOrder
     
-    local LTitle = Instance.new("TextLabel", Page); LTitle.Size = UDim2.new(1,0,0,25); LTitle.BackgroundTransparency = 1; LTitle.Text = TabName .. " Module"; LTitle.TextColor3 = Theme.Purple; LTitle.Font = Enum.Font.GothamBlack; LTitle.TextSize = 16; LTitle.TextXAlignment = Enum.TextXAlignment.Left
+    local LTitle = Instance.new("TextLabel", Page); LTitle.Size = UDim2.new(1,0,0,25); LTitle.BackgroundTransparency = 1; LTitle.Text = TabName .. ""; LTitle.TextColor3 = Theme.Purple; LTitle.Font = Enum.Font.GothamBlack; LTitle.TextSize = 16; LTitle.TextXAlignment = Enum.TextXAlignment.Left
     local LDesc = Instance.new("TextLabel", Page); LDesc.Size = UDim2.new(1,0,0,30); LDesc.BackgroundTransparency = 1; LDesc.Text = DescText; LDesc.TextColor3 = Color3.fromRGB(180,180,180); LDesc.Font = Enum.Font.GothamSemibold; LDesc.TextSize = 11; LDesc.TextWrapped = true; LDesc.TextXAlignment = Enum.TextXAlignment.Left; LDesc.TextYAlignment = Enum.TextYAlignment.Top
     local Div = Instance.new("Frame", Page); Div.Size = UDim2.new(1,0,0,1); Div.BackgroundColor3 = Theme.Item; Div.BorderSizePixel = 0
     
