@@ -1,6 +1,6 @@
 -- [[ KZOYZ HUB - INDEX LOADER V.0.60 (INJECT TO UI) ]] --
 
-getgenv().HubVersion = "v0.60" 
+getgenv().HubVersion = "v0.05" 
 
 local CoreGui = game:GetService("CoreGui")
 local UIS = game:GetService("UserInputService")
@@ -23,7 +23,7 @@ local Header = Instance.new("Frame", Main); Header.BackgroundColor3 = Theme.Head
 local HeaderHide = Instance.new("Frame", Header); HeaderHide.BackgroundColor3 = Theme.Header; HeaderHide.Size = UDim2.new(1, 0, 0.5, 0); HeaderHide.Position = UDim2.new(0, 0, 0.5, 0); HeaderHide.BorderSizePixel = 0
 local Title = Instance.new("TextLabel", Header); Title.Text = " Kzoyz HUB " .. getgenv().HubVersion; Title.TextColor3 = Theme.Purple; Title.Font = Enum.Font.GothamBlack; Title.TextSize = 16; Title.Size = UDim2.new(0.5, 0, 1, 0); Title.BackgroundTransparency = 1; Title.TextXAlignment = Enum.TextXAlignment.Left
 
-local DiscordBtn = Instance.new("TextButton", Header); DiscordBtn.Size = UDim2.new(0, 90, 0, 26); DiscordBtn.Position = UDim2.new(1, -135, 0, 7); DiscordBtn.Text = "Join Discord"; DiscordBtn.BackgroundColor3 = Color3.fromRGB(88, 101, 242); DiscordBtn.TextColor3 = Color3.new(1,1,1); DiscordBtn.Font = Enum.Font.GothamBold; DiscordBtn.TextSize = 12; Instance.new("UICorner", DiscordBtn).CornerRadius = UDim.new(0, 6); DiscordBtn.MouseButton1Click:Connect(function() pcall(function() setclipboard("https://discord.gg/kzoyzhub") end) end)
+local DiscordBtn = Instance.new("TextButton", Header); DiscordBtn.Size = UDim2.new(0, 90, 0, 26); DiscordBtn.Position = UDim2.new(1, -135, 0, 7); DiscordBtn.Text = "Join Discord"; DiscordBtn.BackgroundColor3 = Color3.fromRGB(88, 101, 242); DiscordBtn.TextColor3 = Color3.new(1,1,1); DiscordBtn.Font = Enum.Font.GothamBold; DiscordBtn.TextSize = 12; Instance.new("UICorner", DiscordBtn).CornerRadius = UDim.new(0, 6); DiscordBtn.MouseButton1Click:Connect(function() pcall(function() setclipboard("https://discord.gg/hvawm3Pb") end) end)
 local MinBtn = Instance.new("TextButton", Header); MinBtn.Size = UDim2.new(0, 30, 0, 26); MinBtn.Position = UDim2.new(1, -38, 0, 7); MinBtn.Text = "-"; MinBtn.BackgroundColor3 = Theme.Item; MinBtn.TextColor3 = Color3.new(1,1,1); MinBtn.Font = Enum.Font.GothamBold; MinBtn.TextSize = 18; Instance.new("UICorner", MinBtn).CornerRadius = UDim.new(0, 6)
 local function ToggleUI() Main.Visible = not Main.Visible; KZBtn.Visible = not Main.Visible; if KZBtn.Visible then KZBtn.Position = Main.Position else Main.Position = KZBtn.Position end end; MinBtn.MouseButton1Click:Connect(ToggleUI); KZBtn.MouseButton1Click:Connect(ToggleUI)
 
@@ -56,7 +56,7 @@ local function CreateAutoLoadTab(TabName, DescText, LoadLink)
         Page.Visible = true; TBtn.BackgroundColor3 = Theme.Purple; TBtn.TextColor3 = Color3.new(1,1,1)
         
         if not isLoaded and LoadLink ~= "" then
-            StatusLabel.Text = "⏳ Sedang mengambil script..."
+            StatusLabel.Text = ""
             StatusLabel.TextColor3 = Color3.fromRGB(255, 200, 0)
             isLoaded = true 
             
@@ -72,11 +72,11 @@ local function CreateAutoLoadTab(TabName, DescText, LoadLink)
                     if success then
                         StatusLabel:Destroy() -- Hapus tulisan loading biar rapi
                     else
-                        StatusLabel.Text = "❌ Gagal Jalan: " .. tostring(runErr)
+                        StatusLabel.Text = "" .. tostring(runErr)
                         StatusLabel.TextColor3 = Color3.fromRGB(255, 50, 50)
                     end
                 else
-                    StatusLabel.Text = "❌ Gagal Load Link Raw!"
+                    StatusLabel.Text = ""
                     StatusLabel.TextColor3 = Color3.fromRGB(255, 50, 50)
                 end
             end)
